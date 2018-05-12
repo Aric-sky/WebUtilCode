@@ -10,13 +10,13 @@ class StorageFn {
         var setting = arguments[0];
         if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
             for (var i in setting) {
-                var oDate = new Date();
+                var oDate = new Date()
                 oDate.setDate(oDate.getDate() + day);
                 document.cookie = i + '=' + setting[i] + ';expires=' + oDate;
             }
         }else{
-            var oDate = new Date();
-            oDate.setDate(oDate.getDate() + day);
+            var oDate = new Date()
+            oDate.setDate(oDate.getDate() + day)
             document.cookie = name + '=' + value + ';expires=' + oDate;
         }
         
@@ -24,26 +24,26 @@ class StorageFn {
 
     /*获取cookie*/
     getCookie (name) {
-        var arr = document.cookie.split('; ');
+        var arr = document.cookie.split('; ')
         for (var i = 0; i < arr.length; i++) {
-            var arr2 = arr[i].split('=');
+            var arr2 = arr[i].split('=')
             if (arr2[0] == name) {
-                return arr2[1];
+                return arr2[1]
             }
         }
-        return '';
+        return ''
     }
 
     /*删除cookie*/
     removeCookie (name) {
-        this.setCookie(name, 1, -1);
+        this.setCookie(name, 1, -1)
     }
 
 
     /*-----------------localStorage---------------------*/
     /*设置localStorage*/
     setLocal(key, val) {
-        var setting = arguments[0];
+        var setting = arguments[0]
         if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
             for(var i in setting){
                 this.ls.setItem(i, JSON.stringify(setting[i]))
@@ -57,7 +57,7 @@ class StorageFn {
     /*获取localStorage*/
     getLocal(key) {
         if (key) return JSON.parse(this.ls.getItem(key))
-        return null;
+        return null
         
     }
 
@@ -75,7 +75,7 @@ class StorageFn {
     /*-----------------sessionStorage---------------------*/
     /*设置sessionStorage*/
     setSession(key, val) {
-        var setting = arguments[0];
+        var setting = arguments[0]
         if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object'){
             for(var i in setting){
                 this.ss.setItem(i, JSON.stringify(setting[i]))
@@ -89,7 +89,7 @@ class StorageFn {
     /*获取sessionStorage*/
     getSession(key) {
         if (key) return JSON.parse(this.ss.getItem(key))
-        return null;
+        return null
         
     }
 
@@ -106,4 +106,4 @@ class StorageFn {
     
 }
 
-export default new StorageFn();
+export default new StorageFn()
