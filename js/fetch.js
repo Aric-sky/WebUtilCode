@@ -21,10 +21,12 @@ export default function http(url, options, method = 'GET') {
   const searchStr = obj2String(options)
   let initObj = {}
   if (method === 'GET') { // 如果是GET请求，拼接url
-    url += '?' + searchStr
+    if (searchStr) {
+      url += '?' + searchStr
+    }
     initObj = {
-      method: method,
-      credentials: 'include'
+      method: method
+      // credentials: 'include'
     }
   } else {
     initObj = {
@@ -38,6 +40,7 @@ export default function http(url, options, method = 'GET') {
     }
   }
   return fetch(url, initObj).then((res) => {
+    console.log(res, 'res')
     return res.json()
   }).then((res) => {
     return res
