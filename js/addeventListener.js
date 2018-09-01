@@ -1,3 +1,4 @@
+// 监听事件api
 export const on = (function() {
   if ( document.addEventListener) {
     return function(element, event, handler) {
@@ -13,3 +14,25 @@ export const on = (function() {
     };
   }
 })()
+
+
+// pc端滚动开关
+disabledMouseWheel() {
+  document.addEventListener('DOMMouseScroll', this.scrollFunc, false)
+  document.addEventListener('mousewheel', this.scrollFunc,false)
+}
+cancelDisMouseWheel(){
+  document.removeEventListener('DOMMouseScroll', this.scrollFunc,false)
+  document.removeEventListener('mousewheel', this.scrollFunc,false)
+}
+scrollFunc(evt) {
+  evt = evt || window.event
+  if(evt.preventDefault) { // Firefox
+    evt.preventDefault()
+    evt.stopPropagation()
+  } else { // IE
+    evt.cancelBubble = true
+    evt.returnValue = false
+  }
+  return false;
+}
