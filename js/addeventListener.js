@@ -36,3 +36,17 @@ scrollFunc(evt) {
   }
   return false;
 }
+
+// 移动端touch事件阻止及放开
+
+mo(e){
+  e.preventDefault()
+},
+stop(){
+  document.body.className = 'noscroll'
+  document.addEventListener("touchmove",this.mo,{ passive: false })
+},
+move(){
+  document.body.className = ''
+  document.removeEventListener("touchmove",this.mo,{ passive: false })
+},
