@@ -104,7 +104,7 @@ module.exports = {
         if (isSafari) return "Safari";
         if (isChrome) return "Chrome";
     },
-    function browserTypeHasVersion(userAgent){
+    browserTypeHasVersion (userAgent) {
       var sys = {};
       var ua = navigator.userAgent.toLowerCase();
       var s;

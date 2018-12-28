@@ -102,8 +102,6 @@ class DateFn {
         }))
     }
 
-
-
     /**
      * 返回指定长度的天数集合
      * 
@@ -218,5 +216,42 @@ class DateFn {
         return Math.ceil(numdays / 7);
     }
 
+    /** 计算时间差
+     * @param  {Date} 
+     * @return {String}
+     */
+    timeFuc (times) {
+        let tm = new Date(times).getTime()
+        let now = new Date().getTime()
+        let dateDiff = now - tm
+        var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000))   // 计算出相差天数
+        var leave1 = dateDiff % (24 * 3600 * 1000)    // 计算天数后剩余的毫秒数
+        var hours = Math.floor(leave1 / (3600 * 1000))  // 计算出小时数
+        // 计算相差分钟数
+        var leave2 = leave1 % (3600 * 1000)    // 计算小时数后剩余的毫秒数
+        var minutes = Math.floor(leave2 / (60 * 1000))// 计算相差分钟数
+        // 计算相差秒数
+        var leave3 = leave2 % (60 * 1000)      // 计算分钟数后剩余的毫秒数
+        var seconds = Math.round(leave3 / 1000)
+        // console.log('相差' + dayDiff + '天' + hours + '小时' + minutes + '分钟' + seconds + '秒')
+        if (dayDiff < 1) {
+        if (hours > 0) {
+            return hours + '小时前'
+        } else {
+            if (minutes > 0) {
+            return minutes + '分钟前'
+            } else {
+            return seconds + '秒前'
+            }
+        }
+        } else {
+        let time = new Date(times)
+        let month = (time.getMonth() < 9 ? '0' : '') + (time.getMonth() + 1)
+        let day = (time.getDate() < 10 ? '0' : '') + time.getDate()
+        let hour = (time.getHours() < 10 ? '0' : '') + time.getHours()
+        let minute = (time.getMinutes() < 10 ? '0' : '') + time.getMinutes()
+        return month + '月' + day + '日 ' + hour + ':' + minute
+        }
+    }
 
 }
