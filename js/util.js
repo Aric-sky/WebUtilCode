@@ -27,3 +27,10 @@ function getClientHeight () {
 function getScrollHeight () {
   return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
 }
+
+// 获取字符串真实长度(中文两个字符,英文一个字符)
+function getStrLength (str) {
+  if (str == null) return 0
+  if (typeof str !== 'string') str += ''
+  return str.replace(/[^\x00-\xff]/g, '01').length
+}
