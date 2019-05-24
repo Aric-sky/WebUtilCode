@@ -78,6 +78,10 @@ module.exports = {
         return flag;
     },
 
+    isMobile () { // 判断是否为移动端
+        return /applewebkit.*mobile.*/.test(window.navigator.userAgent.toLowerCase())
+    },
+
     browserType(){
         var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
         var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
