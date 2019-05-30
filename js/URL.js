@@ -12,7 +12,8 @@ export const setUrlParam = (key, value) => {
     } else {
       obj[key] = value
     }
-    return url + '?' + serialize(obj)
+    let paramSearch = serialize(obj)
+    return url + paramSearch ? ('?' + paramSearch) : ''
   } else {
     return url + '?' + key + '=' + value
   }
