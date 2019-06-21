@@ -149,4 +149,9 @@ class ArrayFn {
     average (arr) {
         return this.sum(arr)/arr.length
     }
+    
+    /*扁平化*/
+    average (arr) {
+        return arr.toString().split(',')
+    }
 }
