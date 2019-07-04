@@ -39,6 +39,17 @@ class StorageFn {
         this.setCookie(name, 1, -1)
     }
 
+    /*清空所有cookie*/
+    clearAllCookie() {
+        var date=new Date();
+        date.setTime(date.getTime()-10000);
+        var keys=document.cookie.match(/[^ =;]+(?=\=)/g);
+        console.log("需要删除的cookie名字："+keys);
+        if (keys) {
+            for (var i =  keys.length; i--;)
+              document.cookie=keys[i]+"=0; expire="+date.toGMTString()+"; path=/";
+        }
+    }
 
     /*-----------------localStorage---------------------*/
     /*设置localStorage*/
