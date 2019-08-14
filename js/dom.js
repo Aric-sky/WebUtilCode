@@ -58,4 +58,11 @@ class DomFn {
             return  getComputedStyle(obj,false)[name];
         }
     }
+    /*生成dom元素*/
+    createDom () {
+        var source = document.createElement('source');
+        source.src = "https://gw.alicdn.com/bao/uploaded/LB1ORJVcKH2gK0jSZFEXXcqMpXa.mp4?spm=a1z3i.a4.0.0.390deb1dnjRjbN&file=LB1ORJVcKH2gK0jSZFEXXcqMpXa.mp4";
+        video.appendChild(source);
+    }
+
 }
