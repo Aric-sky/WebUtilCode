@@ -128,4 +128,42 @@ class OtherFn {
             dom.focus();
         }
     }
+    /**
+     * 复制内容
+     * @param  {String} id [需要粘贴的内容]
+     * @param  {String} attr [需要 copy 的属性，默认是 innerText，主要用途例如赋值 a 标签上的 href 链接]
+     */
+    copyTxt(id, attr) {
+      let target = null;
+
+      if (attr) {
+          target = document.createElement('div');
+          target.id = 'tempTarget';
+          target.style.opacity = '0';
+          if (id) {
+              let curNode = document.querySelector('#' + id);
+              target.innerText = curNode.getAttribute(attr)
+          } else {
+              target.innerText = attr;
+          }
+          document.body.appendChild(target);
+      } else {
+          target = document.querySelector('#' + id);
+      }
+
+      try {
+        let range = document.createRange();
+        range.selectNode(target);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        console.log('success', '复制成功！')
+      } catch (e) {
+        console.log('success', '复制失败！')
+      }
+      if (attr) {
+        target.parentElement.removeChild(target);
+      }
+    }
 }
