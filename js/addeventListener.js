@@ -51,3 +51,18 @@ class Scroll {
     document.removeEventListener("touchmove",this.mo,{ passive: false })
   }
 }
+
+/**
+ * dom 需要绑定监听的dom
+ * listenerList 监听配置列表 {event: fuc}
+ */
+const addListener = (dom, listenerList) => {
+  let listener = null
+  const element = dom || document || window || global;
+  
+  for (const key in listenerList) {
+    listener = new WeakMap();
+    listener.set(element, listenerList[key]);
+    element.addEventListener(key, listener.get(element), false);
+  }
+}
