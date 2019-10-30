@@ -58,11 +58,19 @@ class DomFn {
             return  getComputedStyle(obj,false)[name];
         }
     }
-    /*生成dom元素*/
-    createDom () {
-        var source = document.createElement('source');
-        source.src = "https://gw.alicdn.com/bao/uploaded/LB1ORJVcKH2gK0jSZFEXXcqMpXa.mp4?spm=a1z3i.a4.0.0.390deb1dnjRjbN&file=LB1ORJVcKH2gK0jSZFEXXcqMpXa.mp4";
-        video.appendChild(source);
+    /*生成dom元素
+    * txt: 内容
+    * config: 样式配置
+    */
+    createDom (txt, config) {
+      var div = document.createElement('div');
+      if (config){
+        for (const key in config) {
+          div.style[key] = config[key]
+        }
+      }
+      div.innerHTML = txt;
+      document.body.appendChild(div);
     }
 
 }
