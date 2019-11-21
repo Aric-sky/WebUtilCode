@@ -34,3 +34,24 @@ function getStrLength (str) {
   if (typeof str !== 'string') str += ''
   return str.replace(/[^\x00-\xff]/g, '01').length
 }
+
+// javaScript格式化文件大小
+function formatFileSize(fileSize) {
+    if (fileSize < 1024) {
+        return fileSize + 'B';
+    } else if (fileSize < (1024*1024)) {
+        var temp = fileSize / 1024;
+        temp = temp.toFixed(2);
+        return temp + 'KB';
+    } else if (fileSize < (1024*1024*1024)) {
+        var temp = fileSize / (1024*1024);
+        temp = temp.toFixed(2);
+        return temp + 'MB';
+    } else {
+        var temp = fileSize / (1024*1024*1024);
+        temp = temp.toFixed(2);
+        return temp + 'GB';
+    }
+}
+
+
