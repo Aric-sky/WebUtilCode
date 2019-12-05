@@ -27,17 +27,27 @@ class CalcVideo {
         let fileSize = this.fileLengthFormat(file.size, fileNum)
         // 文件类型限制
         let type = this.getFileType(file.name)
-        // 时长
-        this.video.onloadedmetadata = () => {
-          window.URL.revokeObjectURL(this.video.src);
-          var duration = this.video.duration;
-          resolve({
-            fileSize,
-            duration,
-            type,
-            height: this.video.videoHeight,
-            width: this.video.videoWidth,
-          })
+        if (type === 'mp4') {
+            // 时长
+            this.video.onloadedmetadata = () => {
+              window.URL.revokeObjectURL(this.video.src);
+              var duration = this.video.duration;
+              resolve({
+                fileSize,
+                duration,
+                type,
+                height: this.video.videoHeight,
+                width: this.video.videoWidth,
+              })
+            }
+        } else {
+            resolve({
+              fileSize,
+              duration: 0,
+              type,
+              height: this.video.videoHeight,
+              width: this.video.videoWidth,
+            })
         }
       })
     }
