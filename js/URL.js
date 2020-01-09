@@ -19,7 +19,7 @@ export const setUrlParam = (key, value) => {
   }
 }
 
-// 查询参数 obj => string
+// 格式化查询参数 obj => string
 const serialize = (obj) => {
    var str = [];
    for (var p in obj)
