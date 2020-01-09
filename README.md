@@ -13,11 +13,14 @@
 
 #### RequestAnimationFrame.js 
 - 兼容各个浏览器环境的requestAnimationFrame API
+
 #### URL.js
-- setUrlParam(key, value)   // 设置url查询参数
-- serialize(obj)   // 格式化查询参数 obj => string
-- parse_url(url)  // 获得url中的查询参数对象，返回object
-- getQueryString(name)  // 获得URL中的指定参数
+```
+setUrlParam(key, value)   // 设置url查询参数
+serialize(obj)   // 格式化查询参数 obj => string
+parse_url(url)  // 获得url中的查询参数对象，返回object
+getQueryString(name)  // 获得URL中的指定参数
+```
 
 #### addeventListener.js 
 方法名 | 能力 
