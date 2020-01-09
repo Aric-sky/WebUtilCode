@@ -9,10 +9,7 @@
 ### 博客: [http://blog.wangyuanqi.com/](http://blog.wangyuanqi.com/)
 
 
-
-
 ### javascript 总结（常用工具类的封装）
-
 
 #### RequestAnimationFrame.js 
 - 兼容各个浏览器环境的requestAnimationFrame API
@@ -35,7 +32,7 @@ addListener(dom, listenerList) | 用WeakMap绑定监听的方法
 ```
     contains /*判断一个元素是否在数组中*/
     each、map // 遍历数组
-    sort 
+    sort    // 排序
     unique /*去重*/
     union  /*求两个集合的并集*/
     intersect /*求两个集合的交集*/
@@ -56,7 +53,8 @@ addListener(dom, listenerList) | 用WeakMap绑定监听的方法
 - isPC；browserType浏览器类型；
 - checkStr 常用字符串验证
 
-#### string.js 去空格升级版；大小写转换；检测密码强度；过滤html代码(把<>转换)
+#### string.js 
+- 去空格升级版；大小写转换；检测密码强度；过滤html代码(把<>转换)
 #### storage.js 本地数据存储cookie；session；localstorage
 #### fetch.js
 #### ajax.js 使用原生方法封装的xhr请求
