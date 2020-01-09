@@ -1,4 +1,4 @@
-// 监听事件api
+// addEventListener兼容写法
 export const on = (function() {
   if ( document.addEventListener) {
     return function(element, event, handler) {
