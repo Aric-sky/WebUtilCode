@@ -1,14 +1,5 @@
 class NumberFn {
 
-    /*随机数范围*/
-    random (min, max) {
-        if (arguments.length === 2) {
-            return Math.floor(min + Math.random() * ( (max+1) - min ))
-        }else{
-            return null;
-        }
-        
-    }
     //只保留2位小数，如：2，会在2后面补上00.即2.00
     toDecimal2 (x) {
         var f = parseFloat(x);

@@ -1,39 +1,19 @@
 /* //////////////////////////////判断操作///////////////////////////////////*/
 module.exports = {
-    isString (o) { //是否字符串
-        return Object.prototype.toString.call(o).slice(8, -1) === 'String'
-    },
-
-    isNumber (o) { //是否数字
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Number'
-    },
-
-    isObj (o) { //是否对象
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Object'
-    },
-
-    isArray (o) { //是否数组
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Array'
-    },
-
-    isDate (o) { //是否时间
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Date'
-    },
-
-    isBoolean (o) { //是否boolean
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Boolean'
-    },
-
-    isFunction (o) { //是否函数
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Function'
-    },
-
-    isNull (o) { //是否为null
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Null'
-    },
-
-    isUndefined (o) { //是否undefined
-        return Object.prototype.toString.call(o).slice(8, -1) === 'Undefined'
+    /**@param   o       检测参数
+     * @return
+     * 'String'        是否字符串
+     * 'Number'        是否数字
+     * 'Object'         是否对象
+     * 'Array'          是否数组
+     * 'Date'           是否时间
+     * 'Boolean'        是否boolean
+     * 'Function'       是否函数
+     * 'Null'           是否为null
+     * 'Undefined'      是否undefined
+     */
+    checkPrototype (o){
+        return Object.prototype.toString.call(o).slice(8, -1)
     },
 
     isFalse (o) {
@@ -145,7 +125,7 @@ module.exports = {
             case 'QQ':      //QQ号
                 return /^[1-9][0-9]{4,9}$/.test(str);
             case 'email':   //邮箱
-                return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
+                return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(str);
             case 'money':   //金额(小数点2位)
                 return /^\d*(?:\.\d{0,2})?$/.test(str);
             case 'URL':     //网址
@@ -169,10 +149,6 @@ module.exports = {
             default:
                 return true;
         }
-    },
-    isEmail(str) {
-        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
-        return reg.test(str);
     },
     //判断设备是Pc还是mobile
     browserRedirect () {

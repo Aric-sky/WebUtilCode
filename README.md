@@ -93,26 +93,44 @@ once    // 限制方法只调用一次
 
 
 #### number.js
-random(min, max)    // 获取随机数
 toDecimal2(x)       // 只保留2位小数
 numberToChinese     // 将阿拉伯数字翻译成中文的大写数字
 changeToChinese     // 将数字转换为大写金额
 
+#### other.js
 
 
+#### random.js
+createId        // 获取随机ID
+random(min, max)    // 获取随机数
+getRandomColor      // 获取十六进制随机颜色
 
 
----
+#### requestAnimationFrame.js
+requestAnimationFrame API 浏览器兼容方案
+
+#### sort.js
+排序大法好：三大排序: 冒泡，插入，快速
 
 
-#### type.js 检测数据类型；
-- isIos；
-- isPC；browserType浏览器类型；
-- checkStr 常用字符串验证
+#### type.js
+checkPrototype      // 检测变量类型
+isFalse             // 判断是否为false
+isIos           // 判断是否为ios
+isPC        // 判断是否是pc
+isMobile        // 判断是否为mobile
+browserType     // 浏览器类型检测
+browserTypeHasVersion       // 检测浏览器类型包含版本号
+checkStr        // 判断字符串格式
 
-#### string.js 
-- 去空格升级版；大小写转换；检测密码强度；过滤html代码(把<>转换)
-#### storage.js 本地数据存储cookie；session；localstorage
+
+#### URL.js
+setUrlParam(key, value)     // 设置url查询参数
+serialize       // 格式化查询参数 obj => string
+parse_url       // 获得url中的查询参数对象，返回object
+getQueryString      // 获得URL中的指定参数
+getUrlAllParams     // 获取全部url参数,并转换成json对象
+delParamsUrl        // 删除url指定参数，返回url
 
 
 
