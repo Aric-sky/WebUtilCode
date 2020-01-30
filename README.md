@@ -97,8 +97,6 @@ toDecimal2(x)       // 只保留2位小数
 numberToChinese     // 将阿拉伯数字翻译成中文的大写数字
 changeToChinese     // 将数字转换为大写金额
 
-#### other.js
-
 
 #### random.js
 createId        // 获取随机ID
@@ -108,6 +106,9 @@ getRandomColor      // 获取十六进制随机颜色
 
 #### requestAnimationFrame.js
 requestAnimationFrame API 浏览器兼容方案
+
+#### share.js 
+分享功能相关存储、判断方法
 
 #### sort.js
 排序大法好：三大排序: 冒泡，插入，快速
