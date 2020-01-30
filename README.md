@@ -92,6 +92,12 @@ http类，对whatwg-fetch包的封装，用于http请求
 once    // 限制方法只调用一次
 
 
+#### number.js
+random(min, max)    // 获取随机数
+toDecimal2(x)       // 只保留2位小数
+numberToChinese     // 将阿拉伯数字翻译成中文的大写数字
+changeToChinese     // 将数字转换为大写金额
+
 
 
 
