@@ -11,17 +11,6 @@
 
 ## javascript 总结（常用工具类的封装）
 
-#### RequestAnimationFrame.js 
-兼容各个浏览器环境的requestAnimationFrame API
-
-#### URL.js
-```
-setUrlParam(key, value)   // 设置url查询参数
-serialize(obj)   // 格式化查询参数 obj => string
-parse_url(url)  // 获得url中的查询参数对象，返回object
-getQueryString(name)  // 获得URL中的指定参数
-```
-
 #### addeventListener.js 
 ```
 on // 返回一个事件监听函数，兼容IE；可理解为addeventListener的兼容版本
@@ -126,13 +115,14 @@ checkStr        // 判断字符串格式
 
 
 #### URL.js
+```
 setUrlParam(key, value)     // 设置url查询参数
 serialize       // 格式化查询参数 obj => string
 parse_url       // 获得url中的查询参数对象，返回object
 getQueryString      // 获得URL中的指定参数
 getUrlAllParams     // 获取全部url参数,并转换成json对象
 delParamsUrl        // 删除url指定参数，返回url
-
+```
 
 
 
