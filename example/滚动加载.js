@@ -1,5 +1,6 @@
 window.onscroll = function () {
-  if (this.getScrollTop() + this.getClientHeight() >= this.getScrollHeight()) {
+  var id = "box" // 滚动容器id
+  if (this.getScrollTop(id) + this.getClientHeight() >= this.getScrollHeight()) {
     if (this.timer) {
       clearTimeout(this.timer)
     }
@@ -15,10 +16,10 @@ window.onscroll = function () {
   }
 }
 
-// 获取滚动条当前的位置
-function getScrollTop() {
+// 获取容器的滚动距离
+function getScrollTop(id) {
   let scrollTop = 0
-  let ele = document.documentElement
+  let ele = document.getElementById(id)
   if (ele && ele.scrollTop) {
     scrollTop = ele.scrollTop
   } else if (document.body) {
@@ -40,5 +41,8 @@ function getClientHeight() {
 }
 // 获取文档完整的高度
 function getScrollHeight() {
-  return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
+  // 方法一：这种方法可能只能拿到可视区域的高度，非整个文档的高度
+  // return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
+  // 方法二： 增加标志节点div，放在整个文档的最下面，以此来获取文档高度
+  return document.getElementById("mark").offsetTop
 }
