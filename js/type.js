@@ -151,7 +151,7 @@ module.exports = {
         }
     },
     //判断设备是Pc还是mobile
-    browserRedirect () {
+    browserRedirect (isNode) {
         if (isNode) return;
         var sUserAgent = navigator.userAgent.toLowerCase();
         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
