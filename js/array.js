@@ -155,3 +155,12 @@ class ArrayFn {
         return arr.toString().split(',')
     }
 }
+
+// es:
+- 数组求交集
+
+```
+let arr1 = [1,2,3,4,5,6,7,8]
+let arr2 = [1,2]
+let intersect = [...new Set([...arr1].filter(x => arr2.includes(x)))] // [1,2]
+```
