@@ -185,3 +185,19 @@
     display: none;
   }
 }
+
+/*横向滚动样式*/
+.tabs{
+    width: 100%;
+    overflow-x: scroll;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+}
+.tab-list{
+    text-align: center;
+    flex:1 0 auto;
+}
+
+
