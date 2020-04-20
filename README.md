@@ -82,16 +82,20 @@ once    // 限制方法只调用一次
 
 
 #### number.js
+
+```
 toDecimal2(x)       // 只保留2位小数
 numberToChinese     // 将阿拉伯数字翻译成中文的大写数字
 changeToChinese     // 将数字转换为大写金额
-
+```
 
 #### random.js
+
+```
 createId        // 获取随机ID
 random(min, max)    // 获取随机数
 getRandomColor      // 获取十六进制随机颜色
-
+```
 
 #### requestAnimationFrame.js
 requestAnimationFrame API 浏览器兼容方案
@@ -104,6 +108,7 @@ requestAnimationFrame API 浏览器兼容方案
 
 
 #### type.js
+```
 checkPrototype      // 检测变量类型
 isFalse             // 判断是否为false
 isIos           // 判断是否为ios
@@ -112,7 +117,7 @@ isMobile        // 判断是否为mobile
 browserType     // 浏览器类型检测
 browserTypeHasVersion       // 检测浏览器类型包含版本号
 checkStr        // 判断字符串格式
-
+```
 
 #### URL.js
 ```
