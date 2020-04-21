@@ -1,4 +1,4 @@
-// 计算加载时间
+// 计算网页加载时间
 function getPerformanceTiming() {
   var performance = window.performance;
   if (!performance) {
