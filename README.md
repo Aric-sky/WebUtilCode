@@ -28,19 +28,19 @@ addListener(dom, listenerList) // 用WeakMap绑定监听的方法
 ArrayFn 类:
 
 ```
-    contains /*判断一个元素是否在数组中*/
-    each、map // 遍历数组
-    sort    // 排序
-    unique /*去重*/
-    union  /*求两个集合的并集*/
-    intersect /*求两个集合的交集*/
-    remove /*删除其中一个元素*/
-    formArray  /*将类数组转换为数组的方法*/
-    max     /*最大值*/
-    min      /*最小值*/
-    sum     /*求和*/
-    average      /*平均值*/
-    average  /*扁平化*/
+contains /*判断一个元素是否在数组中*/
+each、map // 遍历数组
+sort    // 排序
+unique /*去重*/
+union  /*求两个集合的并集*/
+intersect /*求两个集合的交集*/
+remove /*删除其中一个元素*/
+formArray  /*将类数组转换为数组的方法*/
+max     /*最大值*/
+min      /*最小值*/
+sum     /*求和*/
+average      /*平均值*/
+average  /*扁平化*/
 ```
 
 #### date-time.js
@@ -109,7 +109,7 @@ requestAnimationFrame API 浏览器兼容方案
 
 #### type.js
 ```
-checkPrototype      // 检测变量类型
+checkPrototype      // 判断数据类型
 isFalse             // 判断是否为false
 isIos           // 判断是否为ios
 isPC        // 判断是否是pc
