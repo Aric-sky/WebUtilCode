@@ -187,7 +187,7 @@
 }
 
 /*横向滚动样式*/
-.tabs{
+.tab-list{
     width: 100%;
     overflow-x: scroll;
     display: -webkit-box;
@@ -195,7 +195,7 @@
     flex-wrap:nowrap;
     justify-content:space-between;
 }
-.tab-list{
+.tab-item{
     text-align: center;
     flex:1 0 auto;
 }
