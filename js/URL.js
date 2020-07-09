@@ -40,12 +40,23 @@ const parse_url = (url) => {
 }
 
 // 获得URL中的指定参数
+// 注：若是 window.location.search 拿不到数据，此方法不适用
 function getQueryString(name) { 
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
     var r = window.location.search.substr(1).match(reg); 
     if (r != null) return unescape(r[2]); 
     return null; 
 } 
+// 可替代 getQueryString 方法
+const getParamByParse = (name) => {
+  var url = window.location.href
+  var pattern = /(\w+)=(\w+)/ig;
+  var parames = {};
+  url.replace(pattern, function(a, b, c){
+  parames[b] = c;
+  });
+  return parames[name] || null;
+}
 
 /*获取全部url参数,并转换成json对象*/
 function getUrlAllParams (url) {
