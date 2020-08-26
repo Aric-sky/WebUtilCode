@@ -24,7 +24,7 @@ class CalcVideo {
     }
     init (file, fileNum) {
       return new Promise((resolve, reject) => {
-        let fileSize = this.fileLengthFormat(file.size, fileNum)
+        let {fileSize, level} = this.fileLengthFormat(file.size, fileNum)
         // 文件类型限制
         let type = this.getFileType(file.name)
         if (type === 'mp4') {
@@ -38,6 +38,7 @@ class CalcVideo {
                 type,
                 height: this.video.videoHeight,
                 width: this.video.videoWidth,
+                level
               })
             }
         } else {
@@ -93,7 +94,7 @@ class CalcVideo {
                   format = len.toFixed(2)
                   break;
           }
-          return +format;
+          return {fileSize: +format, level: n};
       }
     }
   }
