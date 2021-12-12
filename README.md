@@ -5,8 +5,7 @@
 
 
 ### 个人网站: [http://www.wangyuanqi.com](http://www.wangyuanqi.com)
-### 学习文档: [http://www.wangyuanqi.com/book](http://www.wangyuanqi.com/book)
-### 博客: [http://blog.wangyuanqi.com/](http://blog.wangyuanqi.com/)
+### 博客: [http://www.wangyuanqi.com/book](http://www.wangyuanqi.com/book)
 
 
 ## javascript 总结（常用工具类的封装）
