@@ -152,21 +152,29 @@ module.exports = {
     },
     //判断设备是Pc还是mobile
     browserRedirect (isNode) {
-        if (isNode) return;
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-        var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            return 'mobile';
-        } else {
-            return 'pc';
-        }
+          const sUserAgent = navigator.userAgent.toLowerCase();
+          const bIsIpad = (/ipad/i).test(sUserAgent);
+          const bIsIphoneOs = (/iphone os/i).test(sUserAgent);
+          const bIsMidp = (/midp/i).test(sUserAgent);
+          const bIsUc7 = (/rv:1.2.3.4/i).test(sUserAgent);
+          const bIsUc = (/ucweb/i).test(sUserAgent);
+          const bIsAndroid = (/android/i).test(sUserAgent);
+          const bIsCE = (/windows ce/i).test(sUserAgent);
+          const bIsWM = (/windows mobile/i).test(sUserAgent);
+          if (
+            bIsIpad ||
+            bIsIphoneOs ||
+            bIsMidp ||
+            bIsUc7 ||
+            bIsUc ||
+            bIsAndroid ||
+            bIsCE ||
+            bIsWM
+          ) {
+            return "mobile";
+          } else {
+            return "pc";
+          }
     },
     
 }
